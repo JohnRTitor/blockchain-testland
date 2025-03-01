@@ -19,6 +19,66 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "people",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "person1",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "person2",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "favoriteNumber",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "retrieve",
 				"outputs": [
@@ -33,7 +93,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "retrievekls",
+				"name": "retrieve_2",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -86,11 +146,11 @@
 	},
 	"sources": {
 		"contracts/SimpleStorage.sol": {
-			"keccak256": "0x45bd9a32ac2ac993efeac24c31b7ca05a4cd34aefa71432555878be6a72a1b7e",
+			"keccak256": "0x097ee4407779388975a479db9b9175a81ef492fb454a259c31a34b2ddb1844cd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f295bce7fe10bc4219841a47111ef5f4e0b1a42856707ebebb4fe8968c8a6821",
-				"dweb:/ipfs/Qmb4XrfWgMjT96Gw4mJipD8UV89xGjgMUgwbtjbH9Ydx8W"
+				"bzz-raw://a36433aa12e9527aa4dd1536485483f4dbd8408d4e2cfcf6f35855f01856b25f",
+				"dweb:/ipfs/QmQADnXcoSqeDzfBGs1HmgVCAx6XYvu4gNg19Pd4uF89Jk"
 			]
 		}
 	},

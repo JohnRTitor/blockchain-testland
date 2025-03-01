@@ -3,17 +3,19 @@ pragma solidity 0.8.8;
 
 // This is a contract
 contract SimpleStorage {
-    // uint256 favoriteNumber = 5;
+    struct People {
+        uint256 favoriteNumber; // indexed at 0
+        string name; // indexed at 1
+    }
     uint256 public favoriteNumber;
-    /*
-    uint256 testNum; // This gets initilised to zero
 
-    bool hasFavoriteNumber = true;
-    string favoriteNumberInText = "Five";
-    int256 favoriteInt = -5;
-    address myAddress = 0x0587e50A345B6A17097A18b76483C49383aD8995;
-    bytes32 myBytes = "Hello World";
-    */
+    People public person1 = People({favoriteNumber: 2, name: "John"});
+    People public person2 = People({favoriteNumber: 4, name: "Mike"});
+    // however, this just goes on and on, let's just use an array to get people as a list
+
+    // this is a dynamic array, though we can give it a size by using
+    // People[5] to give it a size of 5
+    People[] public people;
 
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
@@ -27,10 +29,6 @@ contract SimpleStorage {
     // does not use any gas
     function retrieve() public view returns(uint256) {
         return favoriteNumber;
-    }
-    // pure does not allow read of blockchain either
-    function retrieve_2 () public pure returns(uint256) {
-        return (1 + 1);
     }
 }
 
