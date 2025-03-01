@@ -7,27 +7,24 @@ contract SimpleStorage {
         uint256 favoriteNumber;
         string name;
     }
+
+    // dictionary
+    mapping(string => uint256) public nameToFavoriteNumber;
     uint256 public favoriteNumber;
 
     People[] public people;
 
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
-        favoriteNumber = favoriteNumber + 1;
     }
 
     function retrieve() public view returns(uint256) {
         return favoriteNumber;
     }
 
-    // memory keyword is needed for struct, array, string
-    // it is not needed for int, and other non iterable types
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
-        // we can explicitly provide the parameters
-        // People memory newPerson = People({favoriteNumber: _favoriteNumber, name: _name});
-        // people.push(newPerson);
-
         people.push(People(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
 
