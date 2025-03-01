@@ -6,6 +6,24 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_favoriteNumber",
+						"type": "uint256"
+					}
+				],
+				"name": "addPerson",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "favoriteNumber",
 				"outputs": [
@@ -44,42 +62,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "person1",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "favoriteNumber",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "person2",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "favoriteNumber",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "retrieve",
 				"outputs": [
 					{
@@ -89,19 +71,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "retrieve_2",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
@@ -146,11 +115,11 @@
 	},
 	"sources": {
 		"contracts/SimpleStorage.sol": {
-			"keccak256": "0x097ee4407779388975a479db9b9175a81ef492fb454a259c31a34b2ddb1844cd",
+			"keccak256": "0x8677a987aa71dcac640edf9ebacb0d2379839667be0704c0664e50e50a6b3c6a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a36433aa12e9527aa4dd1536485483f4dbd8408d4e2cfcf6f35855f01856b25f",
-				"dweb:/ipfs/QmQADnXcoSqeDzfBGs1HmgVCAx6XYvu4gNg19Pd4uF89Jk"
+				"bzz-raw://e2b0a1aab2bd1cf53226b645534b08ab6ba23d3f38889c984ec9d5a02f14311c",
+				"dweb:/ipfs/QmdvX7YxEFd84FnV8x92Rr27wqTCUL6VHvkScWQH6q5jNp"
 			]
 		}
 	},
