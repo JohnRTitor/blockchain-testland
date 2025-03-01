@@ -20,6 +20,8 @@ contract SimpleStorage {
         return favoriteNumber;
     }
 
+    // memory keyword is needed for struct, array, string
+    // it is not needed for int, and other non iterable types
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         // we can explicitly provide the parameters
         // People memory newPerson = People({favoriteNumber: _favoriteNumber, name: _name});
