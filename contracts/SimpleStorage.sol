@@ -1,14 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.8;
+pragma solidity ^0.8.8;
 
-// This is a contract
 contract SimpleStorage {
     struct People {
         uint256 favoriteNumber;
         string name;
     }
 
-    // dictionary
     mapping(string => uint256) public nameToFavoriteNumber;
     uint256 public favoriteNumber;
 
