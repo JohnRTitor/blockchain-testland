@@ -9,6 +9,7 @@ contract ExtraStorage is SimpleStorage {
     // overriding the function from SimpleStorage
     // the function needs to be virtual for it to be overridable
     function store(uint256 _favoriteNumber) public override {
-        favoriteNumber = _favoriteNumber;
+        // overriding the logic so we store favoriteNumber input + 5
+        favoriteNumber = _favoriteNumber + 5;
     }
 }
