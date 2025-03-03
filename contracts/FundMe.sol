@@ -20,6 +20,7 @@ contract FundMe {
         // if we don't have the required funds
         require(getConversionRate(msg.value) >= minimumUsd, "Didn't send enough"); // 1e18 = 1 * 10 ** 18
         // msg.sender is the funder address who is sending us money
+        // Docs: https://docs.soliditylang.org/en/v0.8.8/units-and-global-variables.html#block-and-transaction-properties
         funders.push(msg.sender);
         addressToAmountFunded[msg.sender] = msg.value;
     }
