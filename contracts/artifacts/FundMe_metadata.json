@@ -6,10 +6,48 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "fund",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -94,11 +132,11 @@
 			]
 		},
 		"contracts/FundMe.sol": {
-			"keccak256": "0x295462aa218e614e21304613271567f34a481a6e30366a78e4ec180f3b6f130b",
+			"keccak256": "0x85392232603e171486f0765e58ec09c5606935bcd5182d713ce75510ddb6116b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f9f48bed5751c406ce9ae656c9130ccae48ea04e2803f9476eba444ba3e2e2a6",
-				"dweb:/ipfs/QmQzUAdfswX82vWAmeSqSJMZFwJ5Y35oisa1QobpPrfqWq"
+				"bzz-raw://1f28d14ee63d8f1fe4cf822447ff49c505d700a697f6385cbececfcc2d63ba48",
+				"dweb:/ipfs/QmRRswsViTMnUSJTLGkfLNgFxUgRiRGzhKoQrcZZMnJ2px"
 			]
 		}
 	},
