@@ -7,10 +7,10 @@
 pragma solidity ^0.8.8;
 
 contract FundMe {
+    uint256 public minimumUsd = 50;
 
-    // to send funds we need payable keyword
     function fund() public payable  {
-        // We need to set a minimum fund amount
+        // We need to set a minimum fund amount in USD
         require(msg.value > 1e18, "Didn't send enough"); // 1e18 = 1 * 10 ** 18
     }
 

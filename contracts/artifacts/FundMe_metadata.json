@@ -11,6 +11,19 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "minimumUsd",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -41,11 +54,11 @@
 	},
 	"sources": {
 		"contracts/FundMe.sol": {
-			"keccak256": "0x88cabd209ca182c4d24ad421a094eeb5806ce681a7f7a065e4045a54cd16ceb9",
+			"keccak256": "0x5f5f2710700261131a82e1d450b3543cd61c6fc54ebaf05c560e6e036b611fe6",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ee0f254e1b9899e889b5f9e421386c1ca814b55ebe4999af7531d3041b39c7b7",
-				"dweb:/ipfs/QmdXkMZMMDDrXs4UfJwtimZ4Xw2p55m7BjG3NwgvZhj6Na"
+				"bzz-raw://d171d0a6f5f48e72d57f77a37d1fdd6d51f0901b8d290af7ef967cfb0619906c",
+				"dweb:/ipfs/QmRc3kr913CeY9xsAULG9NzDfyYFmPuNHQkMHMTzsrJHdg"
 			]
 		}
 	},
