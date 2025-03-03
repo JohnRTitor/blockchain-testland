@@ -16,6 +16,13 @@ contract FundMe {
     address[] public funders;
     mapping(address =>  uint256) public addressToAmountFunded;
 
+    address public owner;
+
+    constructor() {
+        // Constructor gets immediately called after deploying a contract
+        owner = msg.sender;
+    }
+
     function fund() public payable  {
         require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough");
         funders.push(msg.sender);
@@ -23,30 +30,17 @@ contract FundMe {
     }
     
     function withdraw() public {
+        // only let the sender withdraw the contract
+        require(msg.sender == owner, "Sender is not owner!");
+
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
         }
         // reset the array
         funders = new address[](0);
-        // actually withdraw the money
-        // to send ether or money there are three ways
 
-        // we must typecast an `address` to `address payable` to transfer it money
-
-        // transfer - simpliest - automatically reverts and throws error if transfer fails
-        // maximum of 2300 gas
-        payable(msg.sender).transfer(address(this).balance);
-
-        // send - returns bool
-        // maximum of 2300 gas
-        bool sendSuccess = payable(msg.sender).send(address(this).balance);
-        require(sendSuccess, "Send failed.");
-
-        // call - low level function that can call any function in solidity without the ABI
-        // forwards all gas
-        // call is the recommended way apparently
-        (bool callSuccess, /* bytes memory dataReturned */) = payable(msg.sender).call{value: address(this).balance}("");
+        (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed.");
     }
 }
