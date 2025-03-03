@@ -11,6 +11,8 @@ contract FundMe {
 
     function fund() public payable  {
         // We need to set a minimum fund amount in USD
+        // if we use the require function, we can let the whole operation fail
+        // if we don't have the required funds
         require(msg.value > 1e18, "Didn't send enough"); // 1e18 = 1 * 10 ** 18
     }
 
