@@ -29,10 +29,7 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
     
-    function withdraw() public {
-        // only let the sender withdraw the contract
-        require(msg.sender == owner, "Sender is not owner!");
-
+    function withdraw() public onlyOwner {
         for(uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             address funder = funders[funderIndex];
             addressToAmountFunded[funder] = 0;
@@ -42,5 +39,11 @@ contract FundMe {
 
         (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed.");
+    }
+
+    // this is custom modifier, it is executed first if added to a functon declaration
+    modifier onlyOwner {
+        require(msg.sender == owner, "Sender is not owner!");
+        _; // do the rest of the code
     }
 }
