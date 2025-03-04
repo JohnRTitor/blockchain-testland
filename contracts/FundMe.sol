@@ -8,6 +8,8 @@
 pragma solidity ^0.8.8;
 
 import "./PriceConverter.sol";
+error NotOwner();
+error WithdrawFailed();
 
 contract FundMe {
     // we need to specify this for it to work with uint256 objects
@@ -43,12 +45,13 @@ contract FundMe {
         funders = new address[](0);
 
         (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
-        require(callSuccess, "Call failed.");
+        if (!callSuccess) { revert WithdrawFailed(); }
     }
 
     // this is custom modifier, it is executed first if added to a functon declaration
     modifier onlyOwner {
-        require(msg.sender == i_owner, "Sender is not owner!");
+        // require(msg.sender == i_owner, "Sender is not owner!");
+        if (msg.sender != i_owner) { revert NotOwner(); }
         _; // do the rest of the code
     }
 }
