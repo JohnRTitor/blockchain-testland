@@ -14,6 +14,7 @@ error WithdrawFailed();
 contract FundMe {
     // we need to specify this for it to work with uint256 objects
     using PriceConverter for uint256;
+    // constant variables can not be changed once declared and assigned 
     uint256 public constant MINIMUM_USD = 50 * 1e18;
     // 21,415 gas - constant
     // 23,515 gas - non-constant
@@ -21,6 +22,8 @@ contract FundMe {
     address[] public funders;
     mapping(address =>  uint256) public addressToAmountFunded;
 
+    // immutable variables are only allowed to change once, only in the constructor
+    // can not be modified later
     address public immutable i_owner;
     // 21,508 gas - immutable
     // 23,644 gas - non-immutable
@@ -53,5 +56,16 @@ contract FundMe {
         // require(msg.sender == i_owner, "Sender is not owner!");
         if (msg.sender != i_owner) { revert NotOwner(); }
         _; // do the rest of the code
+    }
+
+    // What happens if someone sends us money without calling the fund() function
+    // receive() or fallback() will be called, both will call fund() by itself
+    // fund() can either then reject or accept the transaction depending on our minimum value logic
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
     }
 }
