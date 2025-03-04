@@ -26,7 +26,7 @@ contract FundMe {
     function fund() public payable  {
         require(msg.value.getConversionRate() >= minimumUsd, "Didn't send enough");
         funders.push(msg.sender);
-        addressToAmountFunded[msg.sender] = msg.value;
+        addressToAmountFunded[msg.sender] += msg.value;
     }
     
     function withdraw() public onlyOwner {
